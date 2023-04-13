@@ -22,10 +22,10 @@ const Saved = () => {
         const hotelsState = localStorage.getItem('hotelsSaved');
         const hotelsItems = JSON.parse(hotelsState);
         setFlightsSaved(items);
-        setFlightsAdded(Number(items.length));
+        setFlightsAdded(Number(items?.length));
         setHotelsSaved(hotelsItems);
-        setHotelsAdded(Number(hotelsItems.length));
-        setCount(Number(items.length) + Number(hotelsItems.length));
+        setHotelsAdded(Number(hotelsItems?.length));
+        setCount(Number(items?.length) + Number(hotelsItems?.length));
     }, [])
 
 
@@ -64,7 +64,7 @@ const Saved = () => {
                     {
                         savedItems === 'flights' ?
                             flightsSaved?.length ?
-                                flightsSaved.map((flight, id) => (
+                                flightsSaved?.map((flight, id) => (
                                     <motion.div variants={itemFade} key={id}>
                                         <Offer flight={flight} cta='Checkout' />
                                     </motion.div>
