@@ -17,15 +17,15 @@ const Saved = () => {
 
     useEffect(() => {
         const flightsState = localStorage.getItem('flightsSaved');
-        const items = JSON.parse(flightsState);
+        const items = JSON.parse(flightsState) || [];
 
         const hotelsState = localStorage.getItem('hotelsSaved');
-        const hotelsItems = JSON.parse(hotelsState);
+        const hotelsItems = JSON.parse(hotelsState) || [];
         setFlightsSaved(items);
-        setFlightsAdded(Number(items?.length));
+        setFlightsAdded(Number(items.length));
         setHotelsSaved(hotelsItems);
-        setHotelsAdded(Number(hotelsItems?.length));
-        setCount(Number(items?.length) + Number(hotelsItems?.length));
+        setHotelsAdded(Number(hotelsItems.length));
+        setCount(Number(items.length) + Number(hotelsItems.length));
     }, [])
 
 
@@ -63,8 +63,8 @@ const Saved = () => {
                 <motion.div variants={container} initial='hidden' whileInView='show' className={`${savedItems === 'flights' ? 'flex flex-col lg:gap-10 md:gap-7 gap-4' : 'grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 md:gap-8 gap-4 font-rubik'}`}>
                     {
                         savedItems === 'flights' ?
-                            flightsSaved?.length ?
-                                flightsSaved?.map((flight, id) => (
+                            flightsSaved.length ?
+                                flightsSaved.map((flight, id) => (
                                     <motion.div variants={itemFade} key={id}>
                                         <Offer flight={flight} cta='Checkout' />
                                     </motion.div>
@@ -72,7 +72,7 @@ const Saved = () => {
                                 (<div className='text-center'>
                                     <h2 className='text-xl text-grayishDark'>No saved Flights</h2>
                                 </div>) :
-                            savedItems === 'hotels' && hotelsSaved?.length ?
+                            savedItems === 'hotels' && hotelsSaved.length ?
                                 hotelsSaved?.map((hotel, id) => (
                                     <motion.div variants={itemFade} key={id}>
                                         <Hotel hotel={hotel} cart='Yes' />
