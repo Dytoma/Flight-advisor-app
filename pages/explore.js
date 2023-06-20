@@ -219,10 +219,10 @@ const Explore = () => {
           Find the right <span className='text-violet'>destination</span> in<br /> one click
         </motion.h2>
         <motion.div variants={itemFade}>
-          <Image src={blackMan} alt='Black man with suitcase' className='lg:mt-20 z-[5] relative md:mt-14 mt-9 lg:w-[250px] lg:h-[250px] md:w-[176px] md:h-[176px] w-[86px] h-[86px]' />
-          <Image src={youngMan} alt='Young smiling boy' className='absolute z-[5] lg:right-6  -right-4 lg:top-24 md:top-16 top-9 md:-right-[3.125rem] lg:h-[250px] lg:w-[250px] md:w-[176px] md:h-[176px] w-[86px] h-[86px]' />
-          <Image src={arrowLine} alt='Line' className='absolute lg:top-[6.25rem] md:top-16 top-10 left-[10px] lg:left-[10.25rem] -z-[0] lg:w-4/5' />
-          <Image src={heroAirplane} alt='Airplane takeoff' className='absolute lg:top-[12.5rem] md:bottom-5 lg:bottom-auto bottom-6 lg:left-[13.75rem] md:right-2 lg:right-auto right-8 lg:w-[800px] md:w-[583px] w-[310px]' />
+          <Image src={blackMan} alt='Black man with suitcase' className='lg:mt-20 z-[5] relative md:mt-14 mt-9 lg:w-[250px] lg:h-[250px] md:w-[176px] md:h-[176px] w-[86px] h-[86px]' priority />
+          <Image src={youngMan} alt='Young smiling boy' className='absolute z-[5] lg:right-6  -right-4 lg:top-24 md:top-16 top-9 md:-right-[3.125rem] lg:h-[250px] lg:w-[250px] md:w-[176px] md:h-[176px] w-[86px] h-[86px]' priority />
+          <Image src={arrowLine} alt='Line' className='absolute lg:top-[6.25rem] md:top-16 top-10 left-[10px] lg:left-[10.25rem] -z-[0] lg:w-4/5' priority />
+          <Image src={heroAirplane} alt='Airplane takeoff' className='absolute lg:top-[12.5rem] md:bottom-5 lg:bottom-auto bottom-6 lg:left-[13.75rem] md:right-2 lg:right-auto right-8 lg:w-[800px] md:w-[583px] w-[310px]' priority />
         </motion.div>
       </motion.div>
 
@@ -256,21 +256,21 @@ const Explore = () => {
             </motion.div>
 
             <motion.div variants={itemFade} className='relative md:flex-1'>
-              <label htmlFor="date" className='flex items-center gap-2 absolute top-3 left-4'>
+              <label htmlFor="dateCheckIn" className='flex items-center gap-2 absolute top-3 left-4'>
                 <span>Travel Date</span>
                 <Image src={calendar} alt='Calendar Icon' aria-hidden='true' />
               </label>
-              <input type='date' name='date' id='date' className={`text-grayText w-full ${travelDateError ? 'border-red-600' : ''}`} min={date} value={travelDate}
+              <input type='date' name='date' id='dateCheckIn' className={`text-grayText w-full ${travelDateError ? 'border-red-600' : ''}`} min={date} value={travelDate}
                 onChange={(e) => setTravelDate(e.target.value)}
               />
             </motion.div>
 
             <motion.div variants={itemFade} className='relative md:flex-1'>
-              <label htmlFor="date" className='flex items-center gap-2 absolute top-3 left-4'>
+              <label htmlFor="dateCheckOut" className='flex items-center gap-2 absolute top-3 left-4'>
                 <span>Return Date</span>
                 <Image src={calendar} alt='Calendar Icon' aria-hidden='true' />
               </label>
-              <input type='date' name='date' id='date' className={`text-grayText w-full ${checkOutError ? 'border-red-600' : ''}`} min={travelDate} value={checkOut}
+              <input type='date' name='date' id='dateCheckOut' className={`text-grayText w-full ${checkOutError ? 'border-red-600' : ''}`} min={travelDate} value={checkOut}
                 onChange={(e) => setCheckOut(e.target.value)}
               />
             </motion.div>
@@ -287,9 +287,9 @@ const Explore = () => {
 
       </div>
 
-      <Image src={globe} alt='Planet Earth' className='absolute lg:-right-40 hidden lg:block right-0 lg:w-[500px] md:w-[240px] w-[154px] lg:top-[75vh] top-[50vh]' />
-      <Image src={globeMd} alt='Planet Earth' className='absolute lg:-right-40 hidden md:block lg:hidden right-0 lg:w-[500px] md:w-[160px] w-[154px] lg:top-[75vh] top-[50vh]' />
-      <Image src={globeSm} alt='Planet Earth' className='absolute lg:-right-40 block md:hidden right-0 lg:w-[500px] md:w-[240px] w-[110px] lg:top-[75vh] top-[50vh]' />
+      <Image src={globe} alt='Planet Earth' className='absolute lg:-right-40 hidden lg:block right-0 lg:w-[500px] md:w-[240px] w-[154px] lg:top-[75vh] top-[50vh]' priority />
+      <Image src={globeMd} alt='Planet Earth' className='absolute lg:-right-40 hidden md:block lg:hidden right-0 lg:w-[500px] md:w-[160px] w-[154px] lg:top-[75vh] top-[50vh]' priority />
+      <Image src={globeSm} alt='Planet Earth' className='absolute lg:-right-40 block md:hidden right-0 lg:w-[500px] md:w-[240px] w-[110px] lg:top-[75vh] top-[50vh]' priority />
 
       <div>
 
