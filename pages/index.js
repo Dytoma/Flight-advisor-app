@@ -204,7 +204,7 @@ const Home = () => {
 
             <motion.div variants={itemFade} className='relative'>
 
-              <Image className='w-full lg:h-[515px] md:h-[388px] h-[12rem] rounded-xl object-cover' src={beach} />
+              <Image className='w-full lg:h-[515px] md:h-[388px] h-[12rem] rounded-xl object-cover' alt='beach' src={beach} />
 
               <div className={`absolute inset-0 flex px-3 py-4 ${styles.linearGradient} rounded-xl text-left items-end text-lightColor`}>
                 <p className='text-xs md:text-sm lg:text-base'>Discover the most beautiful beaches around the world and share you exeriences with your friends and family</p>
